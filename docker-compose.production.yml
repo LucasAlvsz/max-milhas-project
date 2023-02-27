@@ -1,0 +1,25 @@
+version: "3"
+services:
+    max-milhas-postgres-db:
+        image: postgres:alpine
+        container_name: max-milhas-postgres-db
+        restart: always
+        ports:
+            - "1234:5432"
+        env_file:
+            - ./.env
+        volumes:
+            - postgres-db-volume:/var/lib/postgresql/data
+
+    max-milhas-api:
+        container_name: max-milhas-api
+        build: .
+        ports:
+            - 80:5000
+        depends_on:
+            - max-milhas-postgres-db
+        env_file:
+            - .env
+
+volumes:
+    postgres-db-volume:

@@ -9,7 +9,7 @@
 	"scripts": {
 		"dev": "tsx watch src/server.ts",
 		"build": "tsup src --outDir build --format esm",
-		"prestart": "",
+		"prestart": "npm run prisma:deploy",
 		"start": "node build/server.js",
 		"prisma:deploy": "prisma migrate deploy",
 		"prisma:dev": "prisma migrate dev",
