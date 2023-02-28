@@ -1,7 +1,7 @@
 const CPFErrorTypes = {
-	InvalidCpfException: "InvalidCpfException",
-	ExistsCpfException: "ExistsCpfException",
-	NotFoundCpfException: "NotFoundCpfException",
+	InvalidCpfException: "InvalidCpfException" as const,
+	ExistsCpfException: "ExistsCpfException" as const,
+	NotFoundCpfException: "NotFoundCpfException" as const,
 }
 
 const HTTP_STATUS_CODE = {
