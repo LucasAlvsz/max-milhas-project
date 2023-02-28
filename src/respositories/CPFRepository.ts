@@ -12,4 +12,11 @@ const remove = async (cpf: string) => {
 	return await prisma.restrictedCPF.delete({ where: { cpf } })
 }
 
-export default { create, getByCPF, remove }
+const getAll = async () => {
+	return await prisma.restrictedCPF.findMany({
+		select: { cpf: true, createdAt: true },
+		orderBy: { createdAt: "desc" },
+	})
+}
+
+export default { create, getByCPF, remove, getAll }

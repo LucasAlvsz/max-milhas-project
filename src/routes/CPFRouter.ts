@@ -21,5 +21,6 @@ CPFRouter.post(
 		validateSchema(CPFSchemas.cpfParamsSchema),
 		CPFController.deleteCPF
 	)
+	.get("", CPFController.getAllCPFs)
 
 export default CPFRouter
