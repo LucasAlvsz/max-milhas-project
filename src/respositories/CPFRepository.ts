@@ -8,4 +8,8 @@ const getByCPF = async (cpf: string) => {
 	return await prisma.restrictedCPF.findUnique({ where: { cpf } })
 }
 
-export default { create, getByCPF }
+const remove = async (cpf: string) => {
+	return await prisma.restrictedCPF.delete({ where: { cpf } })
+}
+
+export default { create, getByCPF, remove }

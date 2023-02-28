@@ -1,7 +1,7 @@
 import createCpfSchema from "./createCpfSchema"
-import getCpfSchema from "./getCpfSchema"
+import cpfParamsSchema from "./CpfParamsSchema"
 
 export default {
 	createCpfSchema,
-	getCpfSchema,
+	cpfParamsSchema,
 }
