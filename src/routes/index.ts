@@ -1,9 +1,14 @@
+import "express-async-errors"
 import { Router } from "express"
 
-import handleError from "@/middlewares/handlerErrorMiddleware"
+import CPFRouter from "./CPFRouter"
+import { handleError } from "@/middlewares"
 
 const router = Router()
 
-router.get("/health", (req, res) => res.send("OK")).use(handleError)
+router
+	.get("/health", (req, res) => res.send("OK"))
+	.use("/cpf", CPFRouter)
+	.use(handleError)
 
 export default router

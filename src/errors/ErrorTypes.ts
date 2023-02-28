@@ -1,7 +1,8 @@
-type ErrorTypes =
-	| "InvalidCpfException"
-	| "ExistsCpfException"
-	| "NotFoundCpfException"
+const CPFErrorTypes = {
+	InvalidCpfException: "InvalidCpfException",
+	ExistsCpfException: "ExistsCpfException",
+	NotFoundCpfException: "NotFoundCpfException",
+}
 
 const HTTP_STATUS_CODE = {
 	OK: 200,
@@ -13,4 +14,4 @@ const HTTP_STATUS_CODE = {
 	INTERNAL_SERVER_ERROR: 500,
 }
 
-export { ErrorTypes, HTTP_STATUS_CODE }
+export { CPFErrorTypes, HTTP_STATUS_CODE }

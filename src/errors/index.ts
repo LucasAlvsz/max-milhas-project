@@ -1,4 +1,4 @@
-import { HTTP_STATUS_CODE } from "./ErrorTypes"
+import { HTTP_STATUS_CODE, CPFErrorTypes } from "./ErrorTypes"
 
 class AppError {
 	public readonly code: number
@@ -17,4 +17,29 @@ class UnprocessableEntityError extends AppError {
 	}
 }
 
-export { AppError, UnprocessableEntityError }
+class InvalidCpfException extends AppError {
+	constructor(message: string) {
+		super(
+			HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY,
+			message,
+			CPFErrorTypes.InvalidCpfException
+		)
+	}
+}
+
+class ExistsCpfException extends AppError {
+	constructor(message: string) {
+		super(
+			HTTP_STATUS_CODE.CONFLICT,
+			message,
+			CPFErrorTypes.ExistsCpfException
+		)
+	}
+}
+
+export {
+	AppError,
+	UnprocessableEntityError,
+	InvalidCpfException,
+	ExistsCpfException,
+}
