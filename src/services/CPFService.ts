@@ -43,4 +43,6 @@ const cpfExists = async (cpf: string) => {
 
 export default {
 	createCPF,
+	validateCPF,
+	cpfExists,
 }

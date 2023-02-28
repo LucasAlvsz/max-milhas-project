@@ -16,7 +16,7 @@
 		"prisma:generate": "prisma generate",
 		"test": "jest --passWithNoTests -i",
 		"test:remote": "npm run prisma:dev && npm run test",
-		"test:local": "npm run test --watch",
+		"test:local": "jest --passWithNoTests -i --runInBand --verbose --watch",
 		"test:staged": "npm run test --findRelatedTests"
 	},
 	"dependencies": {
@@ -28,6 +28,7 @@
 		"joi": "^17.8.3"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "^7.6.0",
 		"@types/cors": "^2.8.12",
 		"@types/express": "^4.17.13",
 		"@types/jest": "^29.4.0",
