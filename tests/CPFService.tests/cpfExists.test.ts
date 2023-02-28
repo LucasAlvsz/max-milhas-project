@@ -1,6 +1,6 @@
-import { CPFRepository } from "@/respositories"
-import { CPFFactory } from "../../../tests/factories"
-import CPFService from "../CPFService"
+import { CPFRepository } from "../../src/respositories"
+import { CPFFactory } from "../factories"
+import CPFService from "../../src/services/CPFService"
 
 beforeEach(() => {
 	jest.resetModules()

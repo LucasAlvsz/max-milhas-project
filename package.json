@@ -14,7 +14,7 @@
 		"prisma:deploy": "prisma migrate deploy",
 		"prisma:dev": "prisma migrate dev",
 		"prisma:generate": "prisma generate",
-		"test": "jest --passWithNoTests -i",
+		"test": "jest --passWithNoTests -i --detectOpenHandles",
 		"test:remote": "npm run prisma:dev && npm run test",
 		"test:local": "jest --passWithNoTests -i --runInBand --verbose --watch",
 		"test:staged": "npm run test --findRelatedTests"

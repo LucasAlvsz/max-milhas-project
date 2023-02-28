@@ -1,7 +1,7 @@
-import { ExistsCpfException, InvalidCpfException } from "@/errors"
-import { CPFRepository } from "@/respositories"
-import { CPFFactory } from "../../../tests/factories"
-import CPFService from "../CPFService"
+import { ExistsCpfException, InvalidCpfException } from "../../src/errors"
+import { CPFRepository } from "../../src/respositories"
+import { CPFFactory } from "../factories"
+import CPFService from "../../src/services/CPFService"
 
 beforeEach(() => {
 	jest.resetModules()
