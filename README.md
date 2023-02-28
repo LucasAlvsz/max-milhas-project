@@ -1,6 +1,7 @@
 <p align="center"></br>
       <img 
       src="https://uploads-ssl.webflow.com/606907b169dcd481e8fd42c4/60749e148bc1211ddd5bdc7b_maxmilhas%20logo.png" alt="max milhas logo"
+	  height="300px"
       />
 </p>
 
