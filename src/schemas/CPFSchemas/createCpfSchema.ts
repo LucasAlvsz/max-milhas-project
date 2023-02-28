@@ -1,9 +1,10 @@
 import Joi from "joi"
 
 import { CreateCPFBody } from "@/types/CPFTypes"
+import cpfSchema from "./cpfSchema"
 
 const bodySchema = Joi.object<CreateCPFBody>({
-	cpf: Joi.string().required(),
+	cpf: cpfSchema,
 }).options({ allowUnknown: false })
 
 const createCpfSchema = Joi.object({

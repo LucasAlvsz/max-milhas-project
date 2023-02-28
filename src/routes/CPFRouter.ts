@@ -9,7 +9,7 @@ const CPFRouter = Router()
 CPFRouter.post(
 	"",
 	validateSchema(CPFSchemas.createCpfSchema),
-	CPFController.addCpfOnRestrictedList
-)
+	CPFController.createCFP
+).get("/:cpf", validateSchema(CPFSchemas.getCpfSchema), CPFController.getCPF)
 
 export default CPFRouter
