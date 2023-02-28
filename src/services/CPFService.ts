@@ -62,10 +62,16 @@ const deleteCPF = async (cpf: string) => {
 	if (!storedCPF) throw new NotFoundCpfException("CPF not found.")
 	await CPFRepository.remove(cpf)
 }
+
+const getAllCPFs = async () => {
+	return await CPFRepository.getAll()
+}
+
 export default {
 	createCPF,
 	validateCPF,
 	cpfExists,
 	getCPF,
 	deleteCPF,
+	getAllCPFs,
 }
