@@ -22,4 +22,4 @@ jobs:
             - name: Stop services and remove orphaned containers
               run: docker compose -f docker-compose.production.yml down --remove-orphans
             - name: Build and run services
-              run: docker compose -f docker-compose.production.yml up --build
+              run: docker compose -f docker-compose.production.yml up --build -d

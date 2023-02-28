@@ -8,7 +8,7 @@ class AppError {
 	constructor(code: number, message: string, type?: string) {
 		this.code = code
 		this.type = type
-		this.type = this.message = message
+		this.message = message
 	}
 }
 class UnprocessableEntityError extends AppError {
@@ -37,9 +37,20 @@ class ExistsCpfException extends AppError {
 	}
 }
 
+class NotFoundCpfException extends AppError {
+	constructor(message: string) {
+		super(
+			HTTP_STATUS_CODE.NOT_FOUND,
+			message,
+			CPFErrorTypes.NotFoundCpfException
+		)
+	}
+}
+
 export {
 	AppError,
 	UnprocessableEntityError,
 	InvalidCpfException,
 	ExistsCpfException,
+	NotFoundCpfException,
 }

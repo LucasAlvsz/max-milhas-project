@@ -1,4 +1,8 @@
-import { ExistsCpfException, InvalidCpfException } from "@/errors"
+import {
+	ExistsCpfException,
+	InvalidCpfException,
+	NotFoundCpfException,
+} from "@/errors"
 import { CPFRepository } from "@/respositories"
 import { CPFUtils } from "@/utils"
 
@@ -41,8 +45,20 @@ const cpfExists = async (cpf: string) => {
 	return storedCPF || false
 }
 
+const getCPF = async (cpf: string) => {
+	validateCPF(cpf)
+	const storedCPF = await cpfExists(cpf)
+	if (!storedCPF) throw new NotFoundCpfException("CPF not found.")
+
+	return {
+		cpf: storedCPF.cpf,
+		createdAt: storedCPF.createdAt,
+	}
+}
+
 export default {
 	createCPF,
 	validateCPF,
 	cpfExists,
+	getCPF,
 }
