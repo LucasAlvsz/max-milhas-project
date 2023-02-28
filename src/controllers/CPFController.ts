@@ -15,7 +15,14 @@ const getCPF = async (req: Request, res: Response) => {
 	return res.send(cpfData)
 }
 
+const deleteCPF = async (req: Request, res: Response) => {
+	const { cpf } = req.params
+	await CPFService.deleteCPF(cpf)
+	return res.sendStatus(204)
+}
+
 export default {
 	createCFP,
 	getCPF,
+	deleteCPF,
 }

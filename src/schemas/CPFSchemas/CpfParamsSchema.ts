@@ -5,8 +5,8 @@ const paramsSchema = Joi.object({
 	cpf: cpfSchema,
 }).options({ allowUnknown: false })
 
-const getCpfSchema = Joi.object({
+const cpfParamsSchema = Joi.object({
 	params: paramsSchema,
 }).options({ allowUnknown: true })
 
-export default getCpfSchema
+export default cpfParamsSchema

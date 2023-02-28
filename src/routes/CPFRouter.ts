@@ -10,6 +10,16 @@ CPFRouter.post(
 	"",
 	validateSchema(CPFSchemas.createCpfSchema),
 	CPFController.createCFP
-).get("/:cpf", validateSchema(CPFSchemas.getCpfSchema), CPFController.getCPF)
+)
+	.get(
+		"/:cpf",
+		validateSchema(CPFSchemas.cpfParamsSchema),
+		CPFController.getCPF
+	)
+	.delete(
+		"/:cpf",
+		validateSchema(CPFSchemas.cpfParamsSchema),
+		CPFController.deleteCPF
+	)
 
 export default CPFRouter
