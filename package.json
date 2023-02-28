@@ -8,9 +8,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "tsx watch src/server.ts",
-		"build": "tsup src --outDir build --format esm",
+		"build": "tsup src --outDir build",
 		"prestart": "npm run prisma:deploy && npm run prisma:generate",
-		"start": "node build/server.js",
+		"start": "node build/server.cjs",
 		"prisma:deploy": "prisma migrate deploy",
 		"prisma:dev": "prisma migrate dev",
 		"prisma:generate": "prisma generate",
