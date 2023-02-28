@@ -237,6 +237,12 @@ echo PORT=5000 > .env
 echo DATABASE_URL=postgres://username:password@hostname:5432/databasename >> .env
 ```
 
+Build the app
+
+```bash
+  npm run build
+```
+
 Run the app
 
 ```bash
@@ -307,12 +313,27 @@ Run the app
 
 ### Without Docker:
 
-> Follow the steps to run the app without Docker but instead of running the app, run the following commands:
+> Follow the steps to run the app without Docker until "Install the dependencies" and then run the following commands:
 
-Deploy the database schema
+Create test environment variables file and add the environment variables
+
+Unix based systems:
 
 ```bash
-  npm run prisma:deploy
+  touch .env.test
+```
+
+```bash
+echo "PORT=5000" > .env.test
+echo "DATABASE_URL=postgres://username:password@hostname:5432/databasename" >> .env.test
+
+```
+
+Windows:
+
+```bash
+echo PORT=5000 > .env.test
+echo DATABASE_URL=postgres://username:password@hostname:5432/databasename >> .env.test
 ```
 
 Run the tests
@@ -320,6 +341,8 @@ Run the tests
 ```bash
   npm run test
 ```
+
+> You can ignore the warning about the "FSREQCALLBACK" error.
 
 ### With Docker:
 
@@ -358,7 +381,7 @@ echo DATABASE_URL=postgres://%POSTGRES_USER%:%POSTGRES_PASSWORD%@%POSTGRES_HOST%
 Run the tests
 
 ```bash
-  docker-compose -f docker-compose.tests.yml run api-ci npm run test:remote
+  docker-compose -f docker-compose.test.yml run api-ci npm run test:remote
 ```
 
 #
